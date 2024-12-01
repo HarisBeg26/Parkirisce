@@ -1,0 +1,34 @@
+﻿<Window x:Class="Parkirisce.ViewModels.ServisKolesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parkirisce.ViewModels"
+        mc:Ignorable="d"
+        Title="ServisKolesWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Dodajanje koles -->
+        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
+            <TextBox x:Name="BikeId" Width="100" Margin="5" />
+            <TextBox x:Name="Kilometri" Width="100" Margin="5" />
+            <TextBox x:Name="CasVUporabi" Width="100" Margin="5"  />
+            <CheckBox x:Name="PotrebaPoServisu" Content="Potrebuje servis" Margin="5" />
+            <Button Content="Dodaj Kolo" Width="150" Margin="5" Click="DodajKolo_Click" />
+        </StackPanel>
+
+        <!-- Prikaz koles -->
+        <DataGrid x:Name="TabelaKoles" Grid.Row="1" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Kilometri" Binding="{Binding Kilometri}" />
+                <DataGridTextColumn Header="Čas v uporabi" Binding="{Binding CasVUporabi}" />
+                <DataGridTextColumn Header="Potreba Po Servisu" Binding="{Binding PotrebaPoServisu}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

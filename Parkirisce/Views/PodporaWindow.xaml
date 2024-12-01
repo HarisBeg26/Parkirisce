@@ -1,0 +1,30 @@
+﻿<Window x:Class="Parkirisce.Views.PodporaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parkirisce.Views"
+        mc:Ignorable="d"
+        Title="PodporaWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Vnos nove zahteve -->
+        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
+            <TextBox x:Name="Tezava" Width="400" Margin="5" />
+            <Button Content="Dodaj Zahtevo" Width="150" Margin="5" Click="DodajZahtevo_Click" />
+        </StackPanel>
+
+        <!-- Prikaz zahtev -->
+        <DataGrid x:Name="TabelaZahtev" Grid.Row="1" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Podrobnosti Težave" Binding="{Binding PodrobnostiTezave}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

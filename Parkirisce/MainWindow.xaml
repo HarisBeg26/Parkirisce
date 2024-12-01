@@ -1,0 +1,17 @@
+﻿<Window x:Class="Parkirisce.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parkirisce"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Dobrodošli v upravljalni sistem" FontSize="16" TextAlignment="Center" Margin="0,0,0,20" />
+            <Button Name="btn_AddParking" Content="Dodajanje parkirnih mest" Width="200" Height="50" Click="btn_AddParking_Click" />
+            <Button Name="btn_SupportHelp" Content="Podporna pomoč" Width="200" Height="50" Margin="0,10,0,0" Click="btn_SupportHelp_Click" />
+            <Button Name="btn_Repair" Content="Servis koles" Width="200" Height="50" Margin="0,10,0,0" Click="btn_Repair_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
